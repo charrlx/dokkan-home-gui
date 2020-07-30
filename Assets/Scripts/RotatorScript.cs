@@ -27,11 +27,6 @@ public class RotatorScript : MonoBehaviour
 
     //[SerializeField] ParticleSystem clickpoint;
 
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -40,13 +35,13 @@ public class RotatorScript : MonoBehaviour
             mPosDelta = Input.mousePosition.x - mPrevPosX;
             rotation = mPosDelta / -10;
             transform.Rotate(0, 0, rotation);
+            //Tried to implement cursor click feedback
            /* Vector3 cursor = Input.mousePosition;
             ParticleSystem LastClick = Instantiate(clickpoint, cursor, Quaternion.identity);
             Destroy(LastClick, 1f);*/
         }
 
         mPrevPosX = Input.mousePosition.x;
-        Debug.Log(transform.rotation.eulerAngles.z);
 
     }
 
